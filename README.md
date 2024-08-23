@@ -25,6 +25,7 @@ For most intents and purposes, the terminal and shell can be used interchangably
 Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
 
 | Command | Meaning | Description |
+| --- | --- | --- |
 | pwd | print working directory | prints the directory you are currently located |
 | cd | change directory | changes the current directory.
 
