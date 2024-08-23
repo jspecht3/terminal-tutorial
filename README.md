@@ -43,7 +43,7 @@ cd /path/to/specific-folder
 ```
 The `specific-folder` is the directory you need to path for. If it was on your desktop, you would change the path to
 ```
-cd ~/Desktop/specific-folder.
+cd ~/Desktop/specific-folder
 ```
 Generally, the folder you are looking for was made earlier in the tutorial.
 
