@@ -4,8 +4,10 @@ This is a quick unix-based (Linux and macOS) terminal tutorial geared towards co
 For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
 
 - [Introduction](#introduction)
+- [List of Commands](#list-of-commands)
 - [Nomenclature](#nomenclature)
 - [Opening the Terminal](#opening-the-terminal)
+
 
 
 ## Introduction
@@ -18,10 +20,20 @@ However, the terminal cannot work without the shell, which is the brains of the 
 For most intents and purposes, the terminal and shell can be used interchangably because of their inextricable linkage. However, if you are ever confused as to which is which, the shell can be thought of as the "coding language" and the terminal can be thought of as the "output".
 
 
+
+## List of Commands
+Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
+
+| Command | Meaning | Description |
+| pwd | print working directory | prints the directory you are currently located |
+| cd | change directory | changes the current directory.
+
+
+
 ## Nomenclature
 When following tutorials and guides, you may run into unknown nomenclature. For now, you can skip this section and reference back whenever some unknown nomenclature is used.
 
-If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or email me, so it can added for posterity.
+If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or [email](jspecht3@illinois.edu) me, so it can added for posterity.
 
 
 ### \<some-text\>
@@ -29,9 +41,9 @@ When you see `<some-text>`, the tutorial is telling you to replace the text insi
 
 For example, when ssh-ing (getting the terminal of a different machine displayed onto your machine) into another computer, the general formula is:
 ```
-ssh <user>@<server-address>
+ssh <user>@<hostname>
 ```
-The `<user>` should be replaced with your username for that server and `<server-address>` should be replaced with the link to the server.
+The `<user>` should be replaced with your username for that server and `<hostname>` should be replaced with the link to the server.
 
 
 ### /path/to/folder
@@ -61,12 +73,14 @@ In this example, the first line `$ echo "Hello World!"` means you are to use the
 This `$` is different from `$variable`, which uses the value of a variable as an argument.
 
 
+
 ## Opening the Terminal
 Opening the terminal is different on each operating system. Navigate to your platform below:
 
 - [Windows](#windows)
 - [Linux](#linux)
 - [macOS](#macos)
+
 
 ### Windows
 Most likely, you are running a windows machine, which is great for almost all applications, but terminal usage is not one of them. Generally speaking, Unix-based operating systems (Linux and macOS) are better for scientific applications. For better or worse, Windows is a DOS based operating system, meaning, most scientific applications run better on Linux and macOS than Windows.
@@ -91,11 +105,32 @@ Alternatively, you can use the "Super Key" (generally the Windows key) to open t
 
 
 ### macOS
-There are two main ways to open the terminal on macOS. (from (Apple)[https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac])
+There are two main ways to open the terminal on macOS. (from [Apple](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac))
 
 First, you can clock the Launchpad icon in the Dock, type "Terminal", and click the Terminal icon.
 
 Alternatively, in Finder, you can open the `/Applications/Utilities` directory, and double click Terminal.
 
 
-## 
+
+## Basics
+Once you are successfully in the terminal, you should see something like this:
+```
+<user>@<hostname>:~$
+```
+Where `user` and `computer-name` will be the respective values on your computer.
+
+This line may look innocuous, but contains quite a bit of information. If we parse the output, we can see two segments seperated by a `:`.
+```
+# this is the first segment
+<user>@<hostname>
+
+# this is the second segment
+~$
+```
+
+The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to the home directory and `$` denotes that you are a regular user.
+
+
+
+## Shell Files
