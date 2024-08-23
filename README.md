@@ -3,9 +3,8 @@ This is a quick unix-based (Linux and macOS) terminal tutorial geared towards co
 
 For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
 
-If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machien. If you just want a list of the commands, go to the [List of Commands](#list-of-commands).
+If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machine. If you just want a list of the commands, go to the [List of Commands](#list-of-commands).
 
-Sections:
 - [List of Commands](#list-of-commands)
 - [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
@@ -135,7 +134,19 @@ This line may look innocuous, but contains quite a bit of information. If we par
 
 The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to your home directory and `$` denotes that you are a regular user.
 
-### /home Directory
-As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To 
+### Home Directory
+As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To see the real path, we can use `pwd`, which stands for "print working directory."
+```
+joe@v5:~$ pwd
+/home/joe
+```
+With `pwd` we can see that the real path is `/home/joe`, which is the home of the user `joe`.
+
+`~` is what is known as an alias for `/home/<user>`, which means anytime you type `~`, the shell will replace it with `/home/<user>`.
+
+
+### Navigating the Terminal
+In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the directories in the current 
+
 
 ## Shell Files
