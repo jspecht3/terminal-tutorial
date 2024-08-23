@@ -24,7 +24,7 @@ When following tutorials and guides, you may run into unknown nomenclature. For 
 If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or email me, so it can added for posterity.
 
 
-### <some-text>
+### Text between Less Than and Greater Than
 When you see `<some-text>`, the tutorial is telling you to replace the text inside `<>` to whatever is applicable to you.
 
 For example, when ssh-ing (getting the terminal of a different machine displayed onto your machine) into another computer, the general formula is:
