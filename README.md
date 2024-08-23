@@ -21,7 +21,7 @@ For most intents and purposes, the terminal and shell can be used interchangably
 ## Nomenclature
 When following tutorials and guides, you may run into unknown nomenclature. For now, you can skip this section and reference back whenever some unknown nomenclature is used.
 
-If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or (email)[jspecht3@illinois.edu] me, so I can add more for posterity.
+If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or email me, so it can added for posterity.
 
 
 ### <some-text>
@@ -42,10 +42,10 @@ The `<user>` should be replaced with your username for that server and `<server-
 
 For example, if we want to have out terminal output "Hello World!", we can do the following:
 ```
-$ echo "Hello there!"
-Hello there!
+$ echo "Hello World!"
+Hello World!
 ```
-In this example, the first line `$ echo "Hello there!"` means you are using the command `echo`
+In this example, the first line `$ echo "Hello World!"` means you are to use the command `echo` with the argument `"Hello World!"`. The second line `Hello World!` shows the output of the command.
 
 
 ## Opening the Terminal
@@ -60,11 +60,17 @@ Most likely, you are running a windows machine, which is great for almost all ap
 
 Fortunately, there is a way to use a Linux terminal on Windows known as Windows Subsystem for Linux (WSL). This allows you to use Linux commands, applications, etc. on Windows without a virtual machine.
 
-You can find an installation guide [here](https://stackoverflow.com/questions/56765067/how-do-i-get-windows-10-terminal-to-launch-wsl). BE WARNED, when you are creating your Unbuntu user, the password will not be displayed, which is normal whenever you are inputting your password.
+You can find an installation guide [here](https://stackoverflow.com/questions/56765067/how-do-i-get-windows-10-terminal-to-launch-wsl). BE WARNED, when you are creating your Ubuntu user, the password will not be displayed, which is normal whenever you are inputting your password.
 
-Once you 
+Once you have the Linux terminal opened, you should see
+```
+<user>@<computer-name>:~$
+```
+which means you have everything set up correctly.
+
 
 ### Linux
+
 
 ### macOS
 
