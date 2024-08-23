@@ -1,6 +1,4 @@
 # Terminal Tutorial
-
-## \<Test\>
 This is a quick unix-based (Linux and macOS) terminal tutorial geared towards complete beginners. The goal of this tutorial is to be in-depth, but to give you the tools needed to navigate the terminal competently.
 
 For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
@@ -26,7 +24,7 @@ When following tutorials and guides, you may run into unknown nomenclature. For 
 If there is confusing nomenclature used (in this tutorial or not), please open a pull request asking for clarification or email me, so it can added for posterity.
 
 
-### Text between Less Than and Greater Than
+### \<some-text\>
 When you see `<some-text>`, the tutorial is telling you to replace the text inside `<>` to whatever is applicable to you.
 
 For example, when ssh-ing (getting the terminal of a different machine displayed onto your machine) into another computer, the general formula is:
