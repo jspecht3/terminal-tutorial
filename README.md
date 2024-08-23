@@ -3,10 +3,23 @@ This is a quick unix-based (Linux and macOS) terminal tutorial geared towards co
 
 For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
 
-- [Introduction](#introduction)
+If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machien. If you just want a list of the commands, go to the [List of Commands](#list-of-commands).
+
+Sections:
 - [List of Commands](#list-of-commands)
+- [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
 - [Opening the Terminal](#opening-the-terminal)
+
+
+
+## List of Commands
+Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
+
+| Command | Meaning | Description |
+| --- | --- | --- |
+| pwd | print working directory | prints the directory you are currently located, any command will be executed in this directory |
+| cd | change directory | changes the current directory |
 
 
 
@@ -18,16 +31,6 @@ The terminal is probably what you are thinking about when you envision either. T
 However, the terminal cannot work without the shell, which is the brains of the operation. The shell interprets your keyboard inputs and the decides what the terminal should display.
 
 For most intents and purposes, the terminal and shell can be used interchangably because of their inextricable linkage. However, if you are ever confused as to which is which, the shell can be thought of as the "coding language" and the terminal can be thought of as the "output".
-
-
-
-## List of Commands
-Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
-
-| Command | Meaning | Description |
-| --- | --- | --- |
-| pwd | print working directory | prints the directory you are currently located |
-| cd | change directory | changes the current directory.
 
 
 
@@ -130,8 +133,9 @@ This line may look innocuous, but contains quite a bit of information. If we par
 ~$
 ```
 
-The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to the home directory and `$` denotes that you are a regular user.
+The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to your home directory and `$` denotes that you are a regular user.
 
-
+### /home Directory
+As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To 
 
 ## Shell Files
