@@ -35,6 +35,17 @@ The `<user>` should be replaced with your username for that server and `<server-
 
 
 ### /path/to/folder
+Whenever, you see something like `/path/to/folder`, it means you need to change the path to a the directory path on your machine.
+
+For example, if you see
+```
+cd /path/to/specific-folder
+```
+The `specific-folder` is the directory you need to path for. If it was on your desktop, you would change the path to
+```
+cd ~/Desktop/specific-folder.
+```
+Generally, the folder you are looking for was made earlier in the tutorial.
 
 
 ### $ <command>
@@ -47,9 +58,11 @@ Hello World!
 ```
 In this example, the first line `$ echo "Hello World!"` means you are to use the command `echo` with the argument `"Hello World!"`. The second line `Hello World!` shows the output of the command.
 
+This `$` is different from `$variable`, which uses the value of a variable as an argument.
+
 
 ## Opening the Terminal
-Opening the terminal is different in each operating system. Navigate to your platform below:
+Opening the terminal is different on each operating system. Navigate to your platform below:
 
 - [Windows](#windows)
 - [Linux](#linux)
