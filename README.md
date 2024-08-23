@@ -83,10 +83,19 @@ which means you have everything set up correctly.
 
 
 ### Linux
+There are two main ways to open the terminal on Linux.
+
+First, you can use the hotkey `Ctrl` + `Alt` + `T` to open a new terminal window.
+
+Alternatively, you can use the "Super Key" (generally the Windows key) to open the windows manager, search `terminal`, and hit `enter`.
 
 
 ### macOS
+There are two main ways to open the terminal on macOS. (from (Apple)[https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac])
 
+First, you can clock the Launchpad icon in the Dock, type "Terminal", and click the Terminal icon.
+
+Alternatively, in Finder, you can open the `/Applications/Utilities` directory, and double click Terminal.
 
 
 ## 
