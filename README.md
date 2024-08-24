@@ -11,7 +11,7 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 - [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
 - [Opening the Terminal](#opening-the-terminal)
-
+- [Basics](#basics)
 
 
 ## List of Commands
@@ -125,7 +125,7 @@ Once you are successfully in the terminal, you should see something like this:
 ```
 <user>@<hostname>:~$
 ```
-Where `user` and `computer-name` will be the respective values on your computer.
+Where `user` and `hostname` will be the respective values on your computer.
 
 This line may look innocuous, but contains quite a bit of information. If we parse the output, we can see two segments seperated by a `:`.
 ```
@@ -136,7 +136,7 @@ This line may look innocuous, but contains quite a bit of information. If we par
 ~$
 ```
 
-The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to your home directory and `$` denotes that you are a regular user.
+The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user is a member of `hostname`. In the second segment, `~` is the file path to your home directory and `$` denotes that you are a regular user.
 
 ### Home Directory
 As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To see the real path, we can use ✨`pwd`, which stands for "print working directory."
@@ -150,7 +150,7 @@ With `pwd` we can see that the real path is `/home/joe`, which is the home of th
 
 
 ### Navigating the Terminal
-In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the directories in the current working directory we can use ✨`ls`. (our home directories will not look the same)
+In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the files (directories included) in the current working directory we can use ✨`ls`, which is short for "list". (our home directories will not look the same)
 ```
 joe@v5:~$ ls
 classes    Documents   miniforge  python_files
@@ -179,7 +179,7 @@ $ ls projects
 terminal-tutorial
 ```
 
-We created `terminal-tutorial` without even going into `projects`. We can do this because the Unix shell works with 🔴relative file paths, which means, any command that has a file location as an argument can accept the location of any other file. If this does not make sense yet, it will once we investigate the file paths for each folder.
+We created `terminal-tutorial` without even going into `projects`. We can do this because the Unix shell works with 🔴relative file paths, which means, any command that has a file path as an argument can accept the path of a file not in the current directory. If this does not make sense yet, it will once we investigate the file paths for each folder.
 
 To check the file paths, we will use `pwd`. We will also use ✨`cd`, which stands for "change directory."
 ```
@@ -190,7 +190,7 @@ $ pwd
 /home/joe/projects
 ```
 
-Once we change the directory, the current working directory, shown by `pwd` changes aswell. When you enter a command into the terminal, that command by default runs in the current working directory (cwd). 
+Once we change the directory, the current working directory, shown by `pwd`, changes aswell. When you enter a command into the terminal, that command by default runs in the current working directory (cwd). When executing a command that accepts a file path as an argument, by default, the shell looks at the working directory and makes an alias with the name `.`. 
 
 ## Hidden Files
 ## Shell Files
