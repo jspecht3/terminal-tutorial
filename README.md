@@ -3,7 +3,9 @@ This is a quick unix-based (Linux and macOS) terminal tutorial geared towards co
 
 For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
 
-If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machine. If you just want a list of the commands, go to the [List of Commands](#list-of-commands).
+If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machine. If you just want a list of the commands, go to the [List of Commands](#list-of-commands). 
+
+The first time a command is used in the tutorial, a ✨ will be placed in front of that command. Important concepts will be marked with a 🔴.
 
 - [List of Commands](#list-of-commands)
 - [Introduction](#introduction)
@@ -19,6 +21,8 @@ Here, you can find a list of terminal commands and a basic description. You can 
 | --- | --- | --- |
 | pwd | print working directory | prints the directory you are currently located, any command will be executed in this directory |
 | cd | change directory | changes the current directory |
+| mkdir | make directory | creates a directory with the given name |
+| ls | list | lists the files in the current directory |
 
 
 
@@ -86,7 +90,7 @@ Opening the terminal is different on each operating system. Navigate to your pla
 
 
 ### Windows
-Most likely, you are running a windows machine, which is great for almost all applications, but terminal usage is not one of them. Generally speaking, Unix-based operating systems (Linux and macOS) are better for scientific applications. For better or worse, Windows is a DOS based operating system, meaning, most scientific applications run better on Linux and macOS than Windows.
+Most likely, you are running a windows machine. Windows is great for almost all practical uses, but terminal usage is not one of them. Generally speaking, Unix-based operating systems (Linux and macOS) are better for scientific applications. For better or worse, Windows is a DOS based operating system, meaning, most scientific applications run better on Linux and macOS than Windows.
 
 Fortunately, there is a way to use a Linux terminal on Windows known as Windows Subsystem for Linux (WSL). This allows you to use Linux commands, applications, etc. on Windows without a virtual machine.
 
@@ -135,18 +139,58 @@ This line may look innocuous, but contains quite a bit of information. If we par
 The first segment shows the address and the second segment shows the file path. In the first segment, `user` tells you which user is running the command, `@` tells you that specific user user is a member of `hostname`. In the second segment, `~` is the file path to your home directory and `$` denotes that you are a regular user.
 
 ### Home Directory
-As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To see the real path, we can use `pwd`, which stands for "print working directory."
+As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To see the real path, we can use ✨`pwd`, which stands for "print working directory."
 ```
 joe@v5:~$ pwd
 /home/joe
 ```
 With `pwd` we can see that the real path is `/home/joe`, which is the home of the user `joe`.
 
-`~` is what is known as an alias for `/home/<user>`, which means anytime you type `~`, the shell will replace it with `/home/<user>`.
+🔴 `~` is what is known as an alias for `/home/<user>`, which means, anytime you type `~`, the shell will replace the alias `~` with `/home/<user>` when executing commands on the back-end.
 
 
 ### Navigating the Terminal
-In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the directories in the current 
+In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the directories in the current working directory we can use ✨`ls`. (our home directories will not look the same)
+```
+joe@v5:~$ ls
+classes    Documents   miniforge  python_files
+cpp_files  Downloads   Pictures   recovery
+Desktop    miniconda3  snap
+```
 
+Now that we can see all of the available directories, let's make a new one that will be used for this tutorial. Before that, we should create a `projects` directory that will be used for all the different projects. We can create directories with ✨`mkdir`, which is short for "make directory."
+```
+$ mkdir projects 
+```
 
+We created a `projects` directory, but don't take my word for it; run `ls` again and see the directory you made.
+```
+joe@v5:~$ ls
+classes    Documents   miniforge  python_files
+cpp_files  Downloads   Pictures   recovery
+Desktop    miniconda3  projects   snap
+```
+
+With `ls`, we now see the `projects` directory. Next, let's create another directory for this project named `terminal-tutorial` inside of the `projects` directory.
+
+```
+$ mkdir projects/terminal-tutorial
+$ ls projects
+terminal-tutorial
+```
+
+We created `terminal-tutorial` without even going into `projects`. We can do this because the Unix shell works with 🔴relative file paths, which means, any command that has a file location as an argument can accept the location of any other file. If this does not make sense yet, it will once we investigate the file paths for each folder.
+
+To check the file paths, we will use `pwd`. We will also use ✨`cd`, which stands for "change directory."
+```
+$ pwd
+/home/joe
+$ cd projects
+$ pwd
+/home/joe/projects
+```
+
+Once we change the directory, the current working directory, shown by `pwd` changes aswell. When you enter a command into the terminal, that command by default runs in the current working directory (cwd). 
+
+## Hidden Files
 ## Shell Files
