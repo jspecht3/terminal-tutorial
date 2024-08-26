@@ -35,6 +35,7 @@ Here, you can find a few aliases.
 
 Here, you can find a few functions.
 | Function | Name | Description |
+| --- | --- | --- |
 | \| | pipe | redirects the output of one command into the next |
 
 
