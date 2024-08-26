@@ -24,7 +24,7 @@ Here, you can find a list of terminal commands and a basic description. You can 
 | mkdir   | make directory          | creates a directory with the given name                                                        |
 | ls      | list                    | lists the files in the current directory                                                       |
 
-Here, you can find a few aliases 
+Here, you can find a few aliases.
 
 | Alias | Real Value         |
 | ----- | ------------------ |
@@ -32,6 +32,11 @@ Here, you can find a few aliases
 | ~     | home directory     |
 | .     | working directory  |
 | ..    | previous directory |
+
+Here, you can find a few functions.
+| Function | Name | Description |
+| \| | pipe | redirects the output of one command into the next |
+
 
 ## Introduction
 You may have heard the terms "terminal" and "shell" thrown around, perhaps interchangably. However, there is a difference between the two.
@@ -385,6 +390,9 @@ and this is the second.
 
 The above line is empty.
 ```
+
+Now, we can see the contents of a file without needing to open it with a text editor. However, what if we have a very long file and only want to see the first or last line? Luckily, we do not have to scroll, but can use a new 
+
 
 Aside from using a text editor, we can also use terminal commands to add text into a file by using 
 
