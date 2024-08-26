@@ -321,7 +321,7 @@ $ wc --help
 
 By reading the third line, we can see that the three outputs from before are the newline, word, and byte counts, respectively. We can also see all the available options for this command.
 
-The other ways to view documentation are not quite as reliable as `--help`, but you still may find use with them. These commands are :sparkles: `man`, :sparkles `help`, and :sparkles: `info`. 
+The other ways to view documentation are not quite as reliable as `--help`, but you still may find use with them. These commands are :sparkles: `man`, :sparkles: `help`, and :sparkles: `info`. 
 ```
 $ man wc
 $ help wc
