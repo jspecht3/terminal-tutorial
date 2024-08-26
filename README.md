@@ -377,6 +377,15 @@ $ diff copy.txt example.txt
 
 As we can see, the first output is `5d4`, which now means we have to delete the fifth line from `copy.txt` to make it the same as `example.txt`.
 
+Great! We can see how two files are different, but what if we want to see the text in a file? Luckily, there the command :sparkles: `cat`, which is short for concatenate, does just that. Let's see what `cat` does with `example.txt`.
+```
+$ cat example.txt
+This is the first line
+and this is the second.
+
+The above line is empty.
+```
+
 Aside from using a text editor, we can also use terminal commands to add text into a file by using 
 
 ## Regular Expressions
