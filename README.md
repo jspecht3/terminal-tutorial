@@ -125,7 +125,7 @@ $ for i in $(seq 1 3)
 
 This sub-shell for the `for` loops saves us the trouble of making our for loop commands exceedingly long and look this:
 ```
-$ for i in $(seq 1 5); do echo $i; done
+$ for i in $(seq 1 3); do echo $i; done
 1
 2
 3
