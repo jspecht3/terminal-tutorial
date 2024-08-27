@@ -312,7 +312,7 @@ $ ls
 example.txt
 ```
 
-Now, we have an empty text file. We can verify this file is empty with the :sparkles: `wc`.
+Now, we have an empty text file. We can verify this file is empty with the command :sparkles: `wc`.
 ```
 $ wc example.txt
 0 0 0 example.txt
