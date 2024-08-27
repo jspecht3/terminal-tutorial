@@ -335,6 +335,7 @@ $ info wc
 ```
 Where `man` is short for "manual" and is usually the most verbose and nicest to look at.
 
+#### File Outputs
 Now that we understand each number from `wc`, let's change them. Start by opening `example.txt` and entering in the following. (If you do not know how to use a text editor in the terminal, check out this [vim tutorial](https://github.com/jspecht3/vim-tutorial/blob/main/README.md)).
 ```
 This is the first line
@@ -425,8 +426,22 @@ $ cat example.txt | head -2 | tail -1
 and this is the second.
 ```
 
+Whew... that was pretty dense, but now, you have all the requisite knowledge to investigate the basics of files.
 
-Aside from using a text editor, we can also use terminal commands to add text into a file by using 
+#### Moving, Renaming, and Deleting Files
+Next, we will learn how to move, rename, and remove files.
+
+First, let's create a text file called `this-is-a-really-long-file-name.txt` in the home directory by speficying the file path where we want the file to be created.
+```
+$ touch ~/this-is-a-really-long-file-name.txt
+```
+
+Whoops! We actually wanted `this-is-a-really-long-file-name.txt` to be in `projects/terminal-tutorial`. Let's move `this-is-a-really-long-file-name.txt` to this directory with ✨ `mv`, which is short for "move".
+```
+$ mv ~/this-is-a-really-long-file-name.txt .
+```
+With `mv`, first, we need to specify the file we want to move and, second, we need to specify the directory we want the file to be moved to.
+
 
 ## Regular Expressions
 ## Hidden Files
