@@ -109,6 +109,30 @@ In this example, the first line `$ echo "Hello, World!"` means you are to use th
 This `$` is different from `$variable`, which uses the value of a variable as an argument.
 
 
+### Command Line > or >>>
+The `>` when seen in the command line prompt, the usual text before `$` in the terminal, generally means you are being prompted for text in some way.
+
+For an example, we can use a `for` loop, drop into a sub-shell, and avoid having to use `;` to separate each line of the loop.
+```
+$ for i in $(seq 1 3)
+> do
+> echo $i
+> done
+1
+2
+3
+```
+
+This sub-shell for the `for` loops saves us the trouble of making our for loop commands exceedingly long and look this:
+```
+$ for i in $(seq 1 5); do echo $i; done
+1
+2
+3
+```
+
+Both `for` loops do the same thing, but the sub-shell method is markedly easier. Sub-shells are used to isolate environments from 
+
 
 ## Opening the Terminal
 Opening the terminal is different on each operating system. Navigate to your platform below:
@@ -467,7 +491,7 @@ $ mkdir new-dir
 $ cp shorter-name.txt new-dir
 ```
 
-We can observe the file structure with a ✨ `tree`, which is not default command, but can be installed with `sudo apt install tree` or with a project manager called pixi and the command `pixi global install tree`. 
+We can observe the file structure with a ✨ `tree`, which is not default command, but can be installed with `sudo apt install tree` or with a project manager called pixi and the command `pixi global install tree`. From now on, I will also be using `tree` in this tutorial as it is more visually appealing in some cases. If you do not want to install `tree`, you do not have to as it is purely a visual change.
 
 As a quick aside, pixi is a project manager that is an alternative to python environments. Pixi replicates your development environment down to a hash level on machines of almost any platform with minimal user effort. If you are just starting your Unix journey, I would highly recommend starting on pixi as soon as possible. You can find a pixi tutorial [here](https://github.com/jspecht3/pixi-tutorial) 😄.
 
@@ -497,8 +521,21 @@ Now, there is only a single `shorter-name.txt` in `new-dir`. It is very importan
 
 Now that the old `shorter-name.txt` is gone, let's go into `new-dir` and copy `shorter-name.txt` a few times. We can use a 🔴 `for` loop and a command called ✨ `seq` to copy `shorter-name.txt` easily. `seq` is short for sequence and generates a series of number from the first argument to the second argument.
 ```
-
+$ for i in $(seq 1 10)
+> do
+> file-name="copy$i.txt"
+> touch file-name
+> done
 ```
+
+Let's look at all the copies we have created.
+```
+$ ls
+copy10.txt  copy3.txt  copy6.txt  copy9.txt
+copy1.txt   copy4.txt  copy7.txt  shorter-name.txt
+copy2.txt   copy5.txt  copy8.txt
+```
+
 
 
 Next, let's try to remove the directory `new-dir` and see what happens.
@@ -507,7 +544,7 @@ $ rm new-dir/
 rm: cannot remove 'new-dir/': Is a directory
 ```
 
-We see the default `rm` does not work on directories. This is generally
+We see the `rm` does not work on directories by default. This is generally
 
 
 ## Regular Expressions
