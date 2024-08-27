@@ -335,7 +335,7 @@ $ info wc
 ```
 Where `man` is short for "manual" and is usually the most verbose and nicest to look at.
 
-Now that we understand each number from `wc`, let's change them. Start by opening `example.txt` and entering in the following. (If you do not know how to use a text editor in the terminal, check out this `vim` tutorial).
+Now that we understand each number from `wc`, let's change them. Start by opening `example.txt` and entering in the following. (If you do not know how to use a text editor in the terminal, check out this [vim tutorial](https://github.com/jspecht3/vim-tutorial/blob/main/README.md)).
 ```
 This is the first line
 and this is the second.
