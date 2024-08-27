@@ -392,7 +392,38 @@ and this is the second.
 The above line is empty.
 ```
 
-Now, we can see the contents of a file without needing to open it with a text editor. However, what if we have a very long file and only want to see the first or last line? Luckily, we do not have to scroll, but can use a new 
+Now, we can see the contents of a file without needing to open it with a text editor.
+
+However, what if we have a very long file and only want to see the first or last line? Luckily, we do not have to scroll, but can use a new function called "pipe," :sparkles: `|`. The `|` function redirects the output of one function into another.
+
+Let's look at the usage of `|` with the commands ✨ `head` and ✨`tail`, which, by default, show the first and last 10 lines, respectively. We will compare the output of a standard `cat` to a `cat` piped with `head` then `tail`.
+
+Solo `cat`.
+```
+$ cat example.txt
+This is the first line
+and this is the second.
+
+The above line is empty.
+```
+
+Combination of `cat` and `head`. The `-1` argument for `head` denotes how many lines will be concatenated from the beginning of `example.txt`.
+```
+$ cat example.txt | head -1
+This is the first line
+```
+
+Combination of `cat` and `tail`. Ditto from `head`, but from the end of `example.txt`.
+```
+$ cat example.txt | tail -1
+The above line is empty.
+```
+
+We can also use a combination of `head` and `tail` to get a specific line from `example.txt`. Let's get the second line of `example.txt` by, first, getting the first two lines and by, second, getting the last line.
+```
+$ cat example.txt | head -2 | tail -1
+and this is the second.
+```
 
 
 Aside from using a text editor, we can also use terminal commands to add text into a file by using 
