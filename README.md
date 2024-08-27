@@ -438,9 +438,37 @@ $ touch ~/this-is-a-really-long-file-name.txt
 
 Whoops! We actually wanted `this-is-a-really-long-file-name.txt` to be in `projects/terminal-tutorial`. Let's move `this-is-a-really-long-file-name.txt` to this directory with ✨ `mv`, which is short for "move".
 ```
+$ cd ~/projects/termninal-tutorial
 $ mv ~/this-is-a-really-long-file-name.txt .
 ```
-With `mv`, first, we need to specify the file we want to move and, second, we need to specify the directory we want the file to be moved to.
+
+With `mv`, first, we need to specify the file we want to move and, second, we need to specify the directory we want the file to be moved to. If you remember from before, `.` is an alias for the current directory, so using `.` as an argument in `mv` moves the specified file to your current directory. It should be noted that we can specify any directory as the second argument of `mv`, so do not think we are limited to only the current directory.
+
+Let's now verify `this-is-a-really-long-file-name.txt` is in `terminal-tutorial`.
+```
+$ ls
+copy.txt  example.txt  this-is-a-really-long-file-name.txt
+```
+
+Great, `this-is-a-really-long-file-name.txt` is in the directory. However, the filename is quite cumbersome, so let's rename `this-is-a-really-long-file-name.txt` to something more manageable. We can rename files using `mv`; whenever the two arguments of `mv` are in the same directory, the specified file is renamed to the second argument. Let's rename `this-is-a-really-long-file-name.txt` to `shorter-name`, which is far more manageable.
+```
+$ ls
+copy.txt  example.txt  this-is-a-really-long-file-name.txt
+$ mv this-is-a-really-long-file-name.txt shorter-name.txt
+$ ls
+copy.txt  example.txt  shorter-name.txt
+```
+
+Now that we have `shorter-name.txt`, let's make a new directory and copy `shorter-name.txt` into it.
+```
+$ mkdir new-dir
+$ cp shorter-name.txt new-dir
+```
+
+We can observe the file structure with a ✨ `tree`, which is not default command, but can be installed with `sudo apt install tree` or with a project manager called pixi and the command `pixi global install tree`. 
+
+As a quick aside, pixi is a project manager that is an alternative to python environments. Pixi replicates your development environment down to a hash level on machines of almost any platform with minimal user effort. If you are just starting your Unix journey, I would highly recommend starting on pixi as soon as possible. You can find a pixi tutorial [here](#https://github.com/jspecht3/pixi-tutorial) 😄.
+
 
 
 ## Regular Expressions
