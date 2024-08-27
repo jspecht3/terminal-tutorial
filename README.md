@@ -1,7 +1,9 @@
 # Terminal Tutorial
 This is a quick unix-based (Linux and macOS) terminal tutorial geared towards complete beginners. The goal of this tutorial is to be in-depth, but to give you the tools needed to navigate the terminal competently.
 
-For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey.
+For most things in life, it is best to establish a basic framework and incrementally add new things as time progresses; the shell is no different. For now, this tutorial should be all you need, but this is a very brief introduction and should only be the beginning of your journey. 
+
+This tutorial moves fairly quickly and only brushes on each topic, so if you are struggling to remember how to use each command, that is fine. The goal of this tutorial is exposing you to each concept so you understand they exist and can search for them later. Do not worry if you do not remember how to do everything here, but do try to remember that they can be done. The internet is a powerful technology and, as long as you can phrase a question well enough, there is almost assuredly an answer out there.
 
 If you are a complete beginner, you should start at the [Introduction](#introduction) and follow the tutorial on your machine. If you just want a list of the commands and aliases, go to the [List of Commands and Aliases](#list-of-commands-and-aliases). 
 
@@ -469,6 +471,43 @@ We can observe the file structure with a ✨ `tree`, which is not default comman
 
 As a quick aside, pixi is a project manager that is an alternative to python environments. Pixi replicates your development environment down to a hash level on machines of almost any platform with minimal user effort. If you are just starting your Unix journey, I would highly recommend starting on pixi as soon as possible. You can find a pixi tutorial [here](https://github.com/jspecht3/pixi-tutorial) 😄.
 
+Getting back to the terminal tutorial, below is the output for `tree` in `terminal-tutorial`.
+```
+$ tree
+.
+├── copy.txt
+├── example.txt
+├── new-dir
+│   └── shorter-name.txt
+└── shorter-name.txt
+```
+
+We see two copies of `shorter-name.txt` with one in the main directory, or `.`, and the other in `new-dir`. Let's now delete the `shorter-name.txt` in `.` with :sparkles: `rm`, which is short for remove.
+```
+$ rm shorter-name.txt
+$ tree
+.
+├── copy.txt
+├── example.txt
+└── new-dir
+    └── shorter-name.txt
+```
+
+Now, there is only a single `shorter-name.txt` in `new-dir`. It is very important to note that `rm` is permenant, so, unless you have it backed up with some sort of version control, any file removed with `rm` is gone forever.
+
+Now that the old `shorter-name.txt` is gone, let's go into `new-dir` and copy `shorter-name.txt` a few times. We can use a 🔴 `for` loop and a command called ✨ `seq` to copy `shorter-name.txt` easily. `seq` is short for sequence and generates a series of number from the first argument to the second argument.
+```
+
+```
+
+
+Next, let's try to remove the directory `new-dir` and see what happens.
+```
+$ rm new-dir/
+rm: cannot remove 'new-dir/': Is a directory
+```
+
+We see the default `rm` does not work on directories. This is generally
 
 
 ## Regular Expressions
