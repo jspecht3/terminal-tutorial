@@ -467,7 +467,7 @@ $ cp shorter-name.txt new-dir
 
 We can observe the file structure with a ✨ `tree`, which is not default command, but can be installed with `sudo apt install tree` or with a project manager called pixi and the command `pixi global install tree`. 
 
-As a quick aside, pixi is a project manager that is an alternative to python environments. Pixi replicates your development environment down to a hash level on machines of almost any platform with minimal user effort. If you are just starting your Unix journey, I would highly recommend starting on pixi as soon as possible. You can find a pixi tutorial [here](#https://github.com/jspecht3/pixi-tutorial) 😄.
+As a quick aside, pixi is a project manager that is an alternative to python environments. Pixi replicates your development environment down to a hash level on machines of almost any platform with minimal user effort. If you are just starting your Unix journey, I would highly recommend starting on pixi as soon as possible. You can find a pixi tutorial [here](https://github.com/jspecht3/pixi-tutorial) 😄.
 
 
 
