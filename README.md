@@ -382,21 +382,25 @@ $ wc example.txt
 
 This output is telling us there are 4 newlines, 15 words, and 73 characters. However, after counting the number of characters, you will see that there are only 69 visible characters (you can trust me instead of counting yourself). This is because the first three lines end with a "hidden character" `\n` and the last line ends with a hidden character `NUL`.
 
-The use of hidden characters is not particularly relevant to the rest of the tutorial, so feel free to skip this section if you do not care. If you do care, it makes perfect sense that there are hidden charcters used when constructing text files. The protocol for these characters is now Unicode, but was historically ASCII. These protocols tell the computer how to convert text input, which is human legible, to binary, which is computer legible. Without the inclusion of hidden characters, your text editor would not know where to start a new line, put a heading, or end a file.
+The use of hidden characters is not particularly relevant to the rest of the tutorial, so feel free to skip this paragraph if you do not care. If you do care, it makes perfect sense that there are hidden charcters used when constructing text files. The protocol for these characters is now Unicode, but was historically ASCII. These protocols tell the computer how to convert text input, which is human legible, to binary, which is computer legible. Without the inclusion of hidden characters, your text editor would not know where to start a new line, put a heading, end a file, or so much more. If you are interested in other hidden characters, you can check out the (List of Unicode characters Wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters).
 
-Now that we have some text in `example.txt`, let's create a copy named `copy.txt` with :sparkles: `cp`.
+Now that we have some text in `example.txt`, let's create a copy named `copy.txt` with :sparkles: `cp`, which is short for copy.
 ```
 $ cp example.txt copy.txt
 $ ls
 copy.txt  example.txt
 ```
 
-With this, we now have two identical copies of the same file. If we want to verify these files are the same, we can use :sparkles: `diff` to check the difference between them.
+The command `copy` takes two arguments. The first argument is the file that is to be copied and the second argument is the name of the copy.
+
+With `copy`, we now have two identical copies of the same file. If we want to verify these files are the same, we can use :sparkles: `diff`, which is short for difference.
 ```
 $ diff example.txt copy.txt
 ```
 
-Running this, we see there is no output from `diff` because the two files are the same. Let's change that! We can append text to a file by using :sparkles: `<<` to redirect the output from the standard output (terminal display) to another command.
+`diff` is a command that shows you how and where two files differ and takes two arguments, which are both file names. `diff` uses the first file as the file to compare against. We are asking the shell "How do we change the first file so it matches the second file?".
+
+Running this, we see there is no output from `diff` because the two files are the same. Let's change that! We can append text to a file by using :sparkles: `<<`, which redirects the output from the standard output (terminal display) to another command.
 
 In this case, we will use `echo` and `<<` to add some text to `copy.txt` and observe the change with `diff`.
 ```
@@ -406,9 +410,7 @@ $ diff example.txt copy.txt
 > This is a new line.
 ```
 
-With `diff`, we see two outputs. The first output tells us how the files need to be changed in order for each to be the same. In this case, `4a5` means the fourth line of `example.txt` needs to have the fifth line of `copy.txt` added after to have both files be the same. We also see what text is different between the two in the second line of the output.
-
-`diff` uses the first file as the file to compare against. We are asking the shell "How do we change the first file so it matches the second file?" With this, we would expect the opposite when switching the order of the files.
+By adding the extra line to `copy.txt`, `diff` now gives us an output. With `diff`, we see two outputs. The first output tells us how the files need to be changed in order for each to be the same. In this case, `4a5` means the fourth line of `example.txt` needs to have the fifth line of `copy.txt` added after to have both files be the same. We also see what text is different between the two in the second line of the output.
 ```
 $ diff copy.txt example.txt
 5d4
@@ -417,7 +419,7 @@ $ diff copy.txt example.txt
 
 As we can see, the first output is `5d4`, which now means we have to delete the fifth line from `copy.txt` to make it the same as `example.txt`.
 
-Great! We can see how two files are different, but what if we want to see the text in a file? Luckily, there the command :sparkles: `cat`, which is short for concatenate, does just that. Let's see what `cat` does with `example.txt`.
+Great! We can see how two files are different, but what if we just want to see the text in a file? Luckily, we do not have to create an empty text file and use `diff`, although that would work. Instead, we can use the command :sparkles: `cat`, which is short for concatenate. Let's see what `cat` does with `example.txt`.
 ```
 $ cat example.txt
 This is the first line
@@ -426,11 +428,11 @@ and this is the second.
 The above line is empty.
 ```
 
-Now, we can see the contents of a file without needing to open it with a text editor.
+With `cat`, we can see the contents of a file without needing to open it with a text editor.
 
-However, what if we have a very long file and only want to see the first or last line? Luckily, we do not have to scroll, but can use a new function called "pipe," :sparkles: `|`. The `|` function redirects the output of one function into another.
+It is nice to see the contents of a file, but what if we have a very long file and only want to see the first few or last few lines? Luckily, we do not have to scroll, but can use a new function called "pipe," :sparkles: `|`. The `|` function redirects the output of one function into another, so you can string commands together without intermediate steps.
 
-Let's look at the usage of `|` with the commands ✨ `head` and ✨`tail`, which, by default, show the first and last 10 lines, respectively. We will compare the output of a standard `cat` to a `cat` piped with `head` then `tail`.
+Let's look at the usage of `|` with the commands ✨ `head` and ✨`tail`, which, by default, show the first and last 10 lines of a file, respectively. We will compare the output of a standard `cat` to a `cat` piped with `head` then `tail`.
 
 Solo `cat`.
 ```
@@ -459,7 +461,7 @@ $ cat example.txt | head -2 | tail -1
 and this is the second.
 ```
 
-Whew... that was pretty dense, but now, you have all the requisite knowledge to investigate the basics of files.
+Whew... that was pretty dense, but now, you have the requisite knowledge to investigate the basics of files.
 
 #### Moving, Renaming, and Deleting Files
 Next, we will learn how to move, rename, and remove files.
