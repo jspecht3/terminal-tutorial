@@ -305,9 +305,9 @@ $ cd projects/terminal-tutorial
 $ pwd
 home/joe/projects/terminal-tutorial
 ```
-We see that from the home directory, changing directories into `terminal-tutorial` concatenates `/projects/terminal-tutorial` to the home directory. The arguments here are known as relative file paths because we are starting from the cwd and not the root directory as evidenced from the file paths not starting with the root directory `/`.
+We see that from the home directory, changing directories into `terminal-tutorial` concatenates `/projects/terminal-tutorial` to the cwd. The arguments here are known as relative file paths because we are starting from the cwd and not the root directory. All absolute file paths start from the root directory and are indicated by `/`. You can think of your home directory as a your "personal root directory" as almost all commands you need to do are going to be contained here.
 
-Now, let's get back to the home directory. This can be done a few ways, but the novel method will use the alias :red_circle: `..`, which is the absolute file path for the previous directory.
+Now, let's get back to the home directory. This can be done a few ways, but the novel method will use the alias :red_circle: `..`, which is the relative file path for the previous directory.
 ```
 $ pwd
 home/joe/projects/terminal-tutorial
@@ -331,14 +331,16 @@ Now that we understand file paths, lets go back to `terminal-tutorial` and manip
 $ cd /home/<user>/projects/terminal-tutorial
 ```
 
-Now, let's create a `.txt` file with the :sparkles: `touch` command and verify it exists.
+Now, let's create a `.txt` file with :sparkles: `touch` and verify it exists.
 ```
 $ touch example.txt
 $ ls
 example.txt
 ```
 
-Now, we have an empty text file. We can verify this file is empty with the command :sparkles: `wc`.
+The `touch` command can be used to create files without needing to go into the file with a text editor like vim.
+
+Now, we have an empty text file. We can verify this file is empty with the command :sparkles: `wc`, which is short for "word count", but gives more information about the file than the word count alone.
 ```
 $ wc example.txt
 0 0 0 example.txt
@@ -351,18 +353,20 @@ The most ubiquitous way to get the information you are looking for is by couplin
 $ wc --help
 ```
 
-By reading the third line, we can see that the three outputs from before are the newline, word, and byte counts, respectively. We can also see all the available options for this command.
+By reading the third line, we can see that the three outputs from before are the newline, word, and byte counts, respectively. We can also see the usage of the command, a description of the command, all the available options for the command, and even a link to full documentation if any questions remain unresolved.
 
-The other ways to view documentation are not quite as reliable as `--help`, but you still may find use with them. These commands are :sparkles: `man`, :sparkles: `help`, and :sparkles: `info`. 
+As a quick note, there are other ways to view documentation that are not reliable as `--help`, but you still may find use with them. These commands are :sparkles: `man`, :sparkles: `help`, and :sparkles: `info`. 
 ```
 $ man wc
 $ help wc
 $ info wc
 ```
-Where `man` is short for "manual" and is usually the most verbose and nicest to look at.
+Where `man` is short for "manual" and is usually the most verbose and nicest to look at. As mentioned previously, the tree above commands are not as reliable as the `--help` option. As a matter of fact, `help wc` does not even work, but was included because `help` is a command that generally does work.
+
+The reason the `--help` option is so ubiquitous is because the commands `man`, `help`, and `info` are built in commands that are only compatable with default commands and not even all default commands. When a developer or team of developers is making a command, they always include `--help` as an option for the command because they want other people to be able to use that command.
 
 #### File Outputs
-Now that we understand each number from `wc`, let's change them. Start by opening `example.txt` and entering in the following. (If you do not know how to use a text editor in the terminal, check out this [vim tutorial](https://github.com/jspecht3/vim-tutorial/blob/main/README.md)).
+Now that we understand each number from `wc`, let's change them. We will start by opening `example.txt` and entering in the following text (if you do not know how to use a text editor in the terminal, check out this [vim tutorial](https://github.com/jspecht3/vim-tutorial/blob/main/README.md)).
 ```
 This is the first line
 and this is the second.
@@ -370,12 +374,15 @@ and this is the second.
 The above line is empty.
 ```
 
-Let's check what `wc` shows now.
+Let's rerun `wc` and check how the output has now changed.
 ```
 $ wc example.txt
 4 15 73 example.txt
 ```
-If you count out the number of characters, you will see that there are only 69 visible characters (you can trust me instead of counting yourself). This is because each line ends with a "hidden character" `\n`, which denotes a new line.
+
+This output is telling us there are 4 newlines, 15 words, and 73 characters. However, after counting the number of characters, you will see that there are only 69 visible characters (you can trust me instead of counting yourself). This is because the first three lines end with a "hidden character" `\n` and the last line ends with a hidden character `NUL`.
+
+The use of hidden characters is not particularly relevant to the rest of the tutorial, so feel free to skip this section if you do not care. If you do care, it makes perfect sense that there are hidden charcters used when constructing text files. The protocol for these characters is now Unicode, but was historically ASCII. These protocols tell the computer how to convert text input, which is human legible, to binary, which is computer legible. Without the inclusion of hidden characters, your text editor would not know where to start a new line, put a heading, or end a file.
 
 Now that we have some text in `example.txt`, let's create a copy named `copy.txt` with :sparkles: `cp`.
 ```
