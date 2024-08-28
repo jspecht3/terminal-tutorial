@@ -382,7 +382,7 @@ $ wc example.txt
 
 This output is telling us there are 4 newlines, 15 words, and 73 characters. However, after counting the number of characters, you will see that there are only 69 visible characters (you can trust me instead of counting yourself). This is because the first three lines end with a "hidden character" `\n` and the last line ends with a hidden character `NUL`.
 
-The use of hidden characters is not particularly relevant to the rest of the tutorial, so feel free to skip this paragraph if you do not care. If you do care, it makes perfect sense that there are hidden charcters used when constructing text files. The protocol for these characters is now Unicode, but was historically ASCII. These protocols tell the computer how to convert text input, which is human legible, to binary, which is computer legible. Without the inclusion of hidden characters, your text editor would not know where to start a new line, put a heading, end a file, or so much more. If you are interested in other hidden characters, you can check out the (List of Unicode characters Wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters).
+The use of hidden characters is not particularly relevant to the rest of the tutorial, so feel free to skip this paragraph if you do not care. If you do care, it makes perfect sense that there are hidden charcters used when constructing text files. The protocol for these characters is now Unicode, but was historically ASCII. These protocols tell the computer how to convert text input, which is human legible, to binary, which is computer legible. Without the inclusion of hidden characters, your text editor would not know where to start a new line, put a heading, end a file, or so much more. If you are interested in other hidden characters, you can check out the [List of Unicode characters Wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters).
 
 Now that we have some text in `example.txt`, let's create a copy named `copy.txt` with :sparkles: `cp`, which is short for copy.
 ```
@@ -400,7 +400,7 @@ $ diff example.txt copy.txt
 
 `diff` is a command that shows you how and where two files differ and takes two arguments, which are both file names. `diff` uses the first file as the file to compare against. We are asking the shell "How do we change the first file so it matches the second file?".
 
-Running this, we see there is no output from `diff` because the two files are the same. Let's change that! We can append text to a file by using :sparkles: `<<`, which redirects the output from the standard output (terminal display) to another command.
+Running this, we see there is no output from `diff` because the two files are the same. Let's change that! We can append text to a file by using a redirect, :sparkles: `>>`, which redirects the output from the standard output (terminal display) to another, non-standard output.
 
 In this case, we will use `echo` and `<<` to add some text to `copy.txt` and observe the change with `diff`.
 ```
@@ -409,6 +409,8 @@ $ diff example.txt copy.txt
 4a5
 > This is a new line.
 ```
+
+By using `>>` in conjunction with `echo`, we are able to add text to a file without needing to open a text editor. In a similar vein, there is an overwrite, ✨ `>`, which takes the standard output from the first and replaces all existing text in the file after the `>`. Be warned, using `>` will delete all the previous data from your file.
 
 By adding the extra line to `copy.txt`, `diff` now gives us an output. With `diff`, we see two outputs. The first output tells us how the files need to be changed in order for each to be the same. In this case, `4a5` means the fourth line of `example.txt` needs to have the fifth line of `copy.txt` added after to have both files be the same. We also see what text is different between the two in the second line of the output.
 ```
@@ -428,9 +430,9 @@ and this is the second.
 The above line is empty.
 ```
 
-With `cat`, we can see the contents of a file without needing to open it with a text editor.
+With `cat`, we can see the contents of a file directly in the terminal without needing to open it with a text editor.
 
-It is nice to see the contents of a file, but what if we have a very long file and only want to see the first few or last few lines? Luckily, we do not have to scroll, but can use a new function called "pipe," :sparkles: `|`. The `|` function redirects the output of one function into another, so you can string commands together without intermediate steps.
+It is nice to see the contents of a file, but what if we have a very long file and only want to see the first few or last few lines? Luckily, we do not have to scroll, but can use a new function called "pipe," 🔴 `|`. The `|` function redirects the output of one function into another, so you can string commands together without intermediate steps.
 
 Let's look at the usage of `|` with the commands ✨ `head` and ✨`tail`, which, by default, show the first and last 10 lines of a file, respectively. We will compare the output of a standard `cat` to a `cat` piped with `head` then `tail`.
 
@@ -443,7 +445,7 @@ and this is the second.
 The above line is empty.
 ```
 
-Combination of `cat` and `head`. The `-1` argument for `head` denotes how many lines will be concatenated from the beginning of `example.txt`.
+Combination of `cat` and `head`. The `-1` argument for `head` denotes how many lines will be concatenated from the beginning of `example.txt`. Check for yourself how the output changes when you change this number.
 ```
 $ cat example.txt | head -1
 This is the first line
@@ -556,6 +558,7 @@ rm: cannot remove 'new-dir/': Is a directory
 We see the `rm` does not work on directories by default. This is generally
 
 
+## History
 ## Regular Expressions
 ## Hidden Files
 ## Shell Files
