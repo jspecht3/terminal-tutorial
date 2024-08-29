@@ -532,10 +532,10 @@ Now, there is only a single `shorter-name.txt` in `new-dir`. It is very importan
 
 Now that the old `shorter-name.txt` is gone, let's go into `new-dir` and copy `shorter-name.txt` a few times. We can use a 🔴 `for` loop and a command called ✨ `seq` to copy `shorter-name.txt` easily. `seq` is short for sequence and generates a series of number from the first argument to the second argument.
 ```
-$ for i in $(seq 1 10)
+$ for copy_number in $(seq 1 10)
 > do
-> file-name="copy$i.txt"
-> touch file-name
+> FILENAME="copy$copy_number.txt"
+> touch FILENAME
 > done
 ```
 
@@ -547,7 +547,17 @@ copy1.txt   copy4.txt  copy7.txt  shorter-name.txt
 copy2.txt   copy5.txt  copy8.txt
 ```
 
-Now that we see that the `for` loop has done, let's parse the arguments of the `for` loop to see how it works. `for` loops starts are always started with the keyword `for`, followed by the index (`i` in this case, but this can ), 
+We see the `for` loop created 10 copies of `shorter-name.txt` with the name `copyXXX.txt`. Now that we see that the `for` loop has done, let's parse the arguments of the `for` loop to see how it works.
+
+We'll start with the first line of the loop. We will break the first line, `for copy_number in $(seq 1 10)`, down into it's constituent parts.
+- `for` is the keyword that tells the shell to start a loop
+- `copy_number` is the index for the looping. If you ever want to share your work, avoid using indices like `i`, `j`, or `x` in favor or more descriptive indices.
+- `in` seperates the index from the value of each index.
+- `$(seq 1 10)` are the values the index will take on. Here, `seq 1 10` generates a sequence of numbers from 1 to 10. We use :red_circle: `$` to tell the shell that we want to use 
+
+`for` loops starts are always started with the keyword `for`, followed by the index 
+
+(`i` in this case, but this can ), 
 
 
 Next, let's try to remove the directory `new-dir` and see what happens.
