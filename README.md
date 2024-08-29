@@ -547,6 +547,7 @@ copy1.txt   copy4.txt  copy7.txt  shorter-name.txt
 copy2.txt   copy5.txt  copy8.txt
 ```
 
+Now that we see that the `for` loop has done, let's parse the arguments of the `for` loop to see how it works. `for` loops starts are always started with the keyword `for`, followed by the index (`i` in this case, but this can ), 
 
 
 Next, let's try to remove the directory `new-dir` and see what happens.
