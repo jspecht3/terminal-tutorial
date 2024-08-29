@@ -553,11 +553,9 @@ We'll start with the first line of the loop. We will break the first line, `for 
 - `for` is the keyword that tells the shell to start a loop
 - `copy_number` is the index for the looping. If you ever want to share your work, avoid using indices like `i`, `j`, or `x` in favor or more descriptive indices.
 - `in` seperates the index from the value of each index.
-- `$(seq 1 10)` are the values the index will take on. Here, `seq 1 10` generates a sequence of numbers from 1 to 10. We use :red_circle: `$` to tell the shell that we want to use 
+- `$(seq 1 10)` are the values the index will take on. Here, `seq 1 10` generates a sequence of numbers from 1 to 10. We use `$` to tell the shell that we want each of the outputs from `seq 1 10` to be used as an individual index.
 
-`for` loops starts are always started with the keyword `for`, followed by the index 
-
-(`i` in this case, but this can ), 
+In this example, we used 🔴 `$`. The `$` uses the value of a variable or command we previously defined. In this case, 
 
 
 Next, let's try to remove the directory `new-dir` and see what happens.
