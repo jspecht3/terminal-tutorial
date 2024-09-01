@@ -527,6 +527,7 @@ $ tree
 └── new-dir
     └── shorter-name.txt
 ```
+With `rm` we remove the file or files that are specified. If you want to remove a directory, you need to include the `-r` option before the directory as such: `rm -r some-dir`. Here, `-r` tells the shell that you want to recursively remove the directory and all of its contents.
 
 Now, there is only a single `shorter-name.txt` in `new-dir`. It is very important to note that `rm` is permenant, so, unless you have it backed up with some sort of version control, any file removed with `rm` is gone forever.
 
@@ -555,19 +556,68 @@ We'll start with the first line of the loop. We will break the first line, `for 
 - `in` seperates the index from the value of each index.
 - `$(seq 1 10)` are the values the index will take on. Here, `seq 1 10` generates a sequence of numbers from 1 to 10. We use `$` to tell the shell that we want each of the outputs from `seq 1 10` to be used as an individual index.
 
-In this example, we used 🔴 `$`. The `$` uses the value of a variable or command we previously defined. In this case, we used `$(seq 1 10)` to generate a list of integers from \[1, 10\],
+In this example, we used 🔴 `$`. The `$` accesses the value of a variable or command we previously defined. In this case, we used `$(seq 1 10)` to generate a list of integers from \[1, 10\], then use each element in that list as the indices of the for loop. Without the `$` flag, the shell would not use the list as we intended.
 
-
-Next, let's try to remove the directory `new-dir` and see what happens.
+I mentioned that `$` is also used to access the value of variables, so let's look at an example with `$HOME`.
 ```
-$ rm new-dir/
-rm: cannot remove 'new-dir/': Is a directory
+$ echo HOME
+HOME
+$ echo $HOME
+/home/joe
+```
+We can see that with `$`, we are able to access the value of the predefined variable `HOME`. Without `$`, the shell has no way of knowing if we want to use a variable or the value stored in that variable.
+
+
+### Regular Expressions
+Now that we have created the copies of `shorter-name.txt`, let's remove them all. It would be rather tedious to type `rm copy1.txt copy2.txt ...`, so instead we will use a 🔴 regular expression, `*`.
+
+Regular expressions, also known as wildcards, take the place of any filename in the current directory. Next, let's look at the output of `echo *`.
+```
+$ echo *
+copy10.txt copy1.txt copy2.txt copy3.txt copy4.txt copy5.txt
+copy6.txt copy7.txt copy8.txt copy9.txt shorter-name.txt
+```
+By using `*`, we can get the names of all the files in the current directory. However, we can also use `*` and other text to specify specific files.
+
+Let's move to a theoretical directory (as in you do not have this directory) with the files as shown below and investigate regular expressions.
+```
+$ ls
+123example.txt  example.py  test.py  test.txt
 ```
 
-We see the `rm` does not work on directories by default. This is generally
+If we only wanted to view the files with a `.py` extension, we can use `ls *.py`.
+```
+$ ls *.py
+example.py  test.py
+```
+
+In the above example, we see `*` is used as a "replacement" for the part of any file path that comes before a `.py` extension.
+
+Similarly, if we only wanted to see the files with `example` in their name, we could use `ls *example*`.
+```
+$ ls *example*
+123example.txt  example.py
+```
+
+In the above example, we see `*` is used as a "replacement" for the part of any file path that comes before and after `example`. That is to say, any file, in the current directory, that contains `example` anywhere in its filepath relative to the current working directory, will be captured by the `ls`. An astute observer might also notice that `*` does not need to represent any text as evidenced by `example.py`.
+
+Now that we have some understanding of how `*` selects files, let's move back to `~/projects/terminal-tutorial/new-dir` to continue with our copy example.
+```
+$ cd ~/projects/terminal-tutorial/new-dir
+```
+
+Knowing how `*` works now, let's remove all the copies of `shorter-name.txt` with `rm copy*`
+```
+$ rm copy*
+$ ls
+shorter-name.txt
+```
+
+With this, we have removed all the copies and only have `shorter-name.txt` left.
+
 
 
 ## History
-## Regular Expressions
 ## Hidden Files
+## Bash scripts
 ## Shell Files
