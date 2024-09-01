@@ -52,16 +52,24 @@ Here, you can find a few aliases.
 
 | Alias | Real Value         |
 | ----- | ------------------ |
-| /     | root directory     |
 | ~     | home directory     |
 | .     | working directory  |
+| /     | root directory     |
 | ..    | previous directory |
 
 Here, you can find a few functions.
 | Function | Name | Description |
 | --- | --- | --- |
 | \| | pipe | redirects the output of one command into the next |
+| for | for loop | creates a for loop that re-runs a command based on various indices. see the for loop section for usage |
 
+Here, you can find the rest 😅.
+| Expression | Meaning | Description |
+| --- | --- | --- |
+| $ | access variable value | accesses the value of the specified variable or command |
+| * | regular expression | searches for all files in the current working directory that fit the passed string |
+| ⬆️ | up arrow | pastes the most recently used command in the terminal input. can be used multiple times to go deeper into the history |
+| ⬇️ | down arrow | pastes the next most recently used command in the terminal input. can be used multiple times, but needs to follow an ⬆️ |
 
 # Introduction
 You may have heard the terms "terminal" and "shell" thrown around, perhaps interchangably. However, there is a difference between the two.
