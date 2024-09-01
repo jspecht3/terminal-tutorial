@@ -527,10 +527,11 @@ $ tree
 └── new-dir
     └── shorter-name.txt
 ```
-With `rm` we remove the file or files that are specified. If you want to remove a directory, you need to include the `-r` option before the directory as such: `rm -r some-dir`. Here, `-r` tells the shell that you want to recursively remove the directory and all of its contents.
+With `rm`, we remove the file or files that are specified. If you want to remove a directory, you need to include the `-r` option before the directory as such: `rm -r some-dir`. Here, `-r` tells the shell that you want to recursively remove the directory and all of its contents.
 
 Now, there is only a single `shorter-name.txt` in `new-dir`. It is very important to note that `rm` is permenant, so, unless you have it backed up with some sort of version control, any file removed with `rm` is gone forever.
 
+#### for Loops
 Now that the old `shorter-name.txt` is gone, let's go into `new-dir` and copy `shorter-name.txt` a few times. We can use a 🔴 `for` loop and a command called ✨ `seq` to copy `shorter-name.txt` easily. `seq` is short for sequence and generates a series of number from the first argument to the second argument.
 ```
 $ for copy_number in $(seq 1 10)
@@ -548,7 +549,7 @@ copy1.txt   copy4.txt  copy7.txt  shorter-name.txt
 copy2.txt   copy5.txt  copy8.txt
 ```
 
-We see the `for` loop created 10 copies of `shorter-name.txt` with the name `copyXXX.txt`. Now that we see that the `for` loop has done, let's parse the arguments of the `for` loop to see how it works.
+We see the `for` loop created 10 copies of `shorter-name.txt` with the name `copyX.txt`. Now that we see that the `for` loop has done, let's parse the arguments of the `for` loop to see how it works.
 
 We'll start with the first line of the loop. We will break the first line, `for copy_number in $(seq 1 10)`, down into it's constituent parts.
 - `for` is the keyword that tells the shell to start a loop
@@ -568,7 +569,7 @@ $ echo $HOME
 We can see that with `$`, we are able to access the value of the predefined variable `HOME`. Without `$`, the shell has no way of knowing if we want to use a variable or the value stored in that variable.
 
 
-### Regular Expressions
+#### Regular Expressions
 Now that we have created the copies of `shorter-name.txt`, let's remove them all. It would be rather tedious to type `rm copy1.txt copy2.txt ...`, so instead we will use a 🔴 regular expression, `*`.
 
 Regular expressions, also known as wildcards, take the place of any filename in the current directory. Next, let's look at the output of `echo *`.
@@ -615,9 +616,47 @@ shorter-name.txt
 
 With this, we have removed all the copies and only have `shorter-name.txt` left.
 
+#### History
+The last concept I would consider a "beginner concept" is the command history. The command history is exactly as it sounds and can be viewed with :sparkles: `history`.
+```
+$ history | tail -5
+ 2091  history
+ 2092  ls
+ 2093  cd ~
+ 2094  la
+ 2095  history | tail -5
+```
+
+`history` shows the list of all the commands you have used in the current session (time since last restart), which can be in the thousands if you do not restart your machine often. In this case, I am using `history | tail -5` to only show the last 5 commands and not all 2095. It should also be noted that `history` includes the most recently used `history` as the last command.
+
+As a quick aside, if you do accidentally display all of the previous commands, or just want to clear the terminal display for any reason, we can use the command :sparkles: `clear`. `clear` clears the output currently displayed in the terminal. Try `clear` for yourself; don't worry you do not lose any data when using `clear`.
+
+Now, let's move back to `history`. Knowing which command we used in the past is helpful, but we can also run the previously executed commands with the command :sparkles: `!`, which re-executes a command from the number given by `history`.
+
+Let's start by using `echo "You just ran this command!"` to output some sample text, check the number of that command with `history | tail -2`, and rerun that command with `!<command-number>`.  
+```
+$ echo "You just ran this command!"
+You just ran this command!
+$ history | tail -2
+ 2100 echo "You just ran this command!"
+ 2101 history | tail -2
+$ !2100
+You just ran this command!
+```
+
+With this series of commands, we can rerun any command we have previously run. We might need to rerun a command if we entered the command in the wrong directory, it is cumbersome to retype, or for any other reason. 
+
+Another useful command is :sparkles: `!!`, which reruns the previously executed command. Using the same command as before, we get the following sequence.
+```
+$ echo "You just ran this command!"
+"You just ran this command!"
+$ !!
+"You just ran this command!"
+```
+
+Finally, you can access the `history` by also using 🔴 the arrow keys. Hitting the up arrow pastes the previously used command into the terminal input; you can also keep hitting the up arrrow to go further into the command history. Similarly, you can paste a more recently used command by pressing the down arrow, but this only works if you have already pressed the up arrow however many times.
 
 
-## History
 ## Hidden Files
 ## Bash scripts
 ## Shell Files
