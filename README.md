@@ -16,7 +16,7 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 - [Basics](#basics)
 
 
-## Lists of Commands and Aliases
+# Lists of Commands and Aliases
 Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
 
 | Command | Meaning                 | Description                                                                                    |
@@ -41,7 +41,7 @@ Here, you can find a few functions.
 | \| | pipe | redirects the output of one command into the next |
 
 
-## Introduction
+# Introduction
 You may have heard the terms "terminal" and "shell" thrown around, perhaps interchangably. However, there is a difference between the two.
 
 The terminal is probably what you are thinking about when you envision either. The terminal is what you are seeing when you are entering commands, navigating directories (sobriquet for folders), and is strictly a display. Terminals used to be physical (e.g., old IBM machines), but are now almost entirely virtual.
@@ -52,13 +52,13 @@ For most intents and purposes, the terminal and shell can be used interchangably
 
 
 
-## Nomenclature
+# Nomenclature
 When following tutorials and guides, you may run into unknown nomenclature. For now, you can skip this section and reference back whenever some unknown nomenclature is used.
 
 If there is confusing nomenclature used (in this tutorial or not), please open an issue asking for clarification, make a pull request adding the clarification, or [email](jspecht3@illinois.edu) me, so it can added for posterity.
 
 
-### \#
+## \#
 A `#` tells you where a comment begins. You can either have comments that take up a whole line or are inline.
 
 For example, if there are two ways to do something, I might let the user know about each of those methods
@@ -72,7 +72,7 @@ $ <command-1>
 $ <command-2>  # this is an inline comment
 ```
 
-### \<some-text\>
+## \<some-text\>
 When you see `<some-text>`, the tutorial is telling you to replace the text inside `<>` to whatever is applicable to you.
 
 For example, when ssh-ing (getting the terminal of a different machine displayed onto your machine) into another computer, the general formula is:
@@ -82,7 +82,7 @@ ssh <user>@<hostname>
 The `<user>` should be replaced with your username for that server and `<hostname>` should be replaced with the link to the server.
 
 
-### /path/to/folder
+## /path/to/folder
 Whenever, you see something like `/path/to/folder`, it means you need to change the path to a the directory path on your machine.
 
 For example, if you see
@@ -96,7 +96,7 @@ cd ~/Desktop/specific-folder
 Generally, the folder you are looking for was made earlier in the tutorial.
 
 
-### $ <command>
+## $ <command>
 `$` is used to denote a terminal command and is usually used when there is a mixture of terminal commands and terminal outputs being displayed.
 
 For example, if we want to have out terminal output "Hello, World!", we can do the following:
@@ -109,7 +109,7 @@ In this example, the first line `$ echo "Hello, World!"` means you are to use th
 This `$` is different from `$variable`, which uses the value of a variable as an argument.
 
 
-### Command Line > or >>>
+## Command Line > or >>>
 The `>` when seen in the command line prompt, the usual text before `$` in the terminal, generally means you are being prompted for text in some way.
 
 For an example, we can use a `for` loop, drop into a sub-shell, and avoid having to use `;` to separate each line of the loop.
@@ -132,6 +132,9 @@ $ for i in $(seq 1 3); do echo $i; done
 ```
 
 Both `for` loops do the same thing, but the sub-shell method is markedly easier. Sub-shells are used to isolate environments from 
+
+# Basics
+Here you can find the basics you need to competently operate in the terminal. If you think you already know a section, you may still find use in looking through it as I have dispersed new commands organically throughout, so they may appear in unexpected places.
 
 
 ## Opening the Terminal
@@ -172,17 +175,13 @@ First, you can clock the Launchpad icon in the Dock, type "Terminal", and click 
 Alternatively, in Finder, you can open the `/Applications/Utilities` directory, and double click Terminal.
 
 
-
-## Basics
-This section will cover the need-to-knows of terminal usage. This section should be enough to let you competently navigate the terminal.
-
 - [Overview](#overview)
 - [Home Directory](#home-directory)
 - [Navigating the Terminal](#navigating-the-terminal)
 - [File Paths](#file-paths)
 - [Manipulating Files](#manipulating-files)
 
-### Overview
+## Overview
 Once you are successfully in the terminal, you should see something like this:
 ```
 <user>@<hostname>:~$
@@ -208,7 +207,7 @@ Hello, World!
 
 We now see "Hello, World!" returned to us. In this case, we do not need to explicitly need the quotation marks around the text, but it is best practice to do so.
 
-### Home Directory
+## Home Directory
 As mentioned before `~` is the file path for your (current user's) home directory. However, `~` is simply an alias for the actual path. To see the real path, we can use ✨`pwd`, which stands for "print working directory."
 ```
 joe@v5:~$ pwd
@@ -219,7 +218,7 @@ With `pwd` we can see that the real path is `/home/joe`, which is the home of th
 🔴 `~` is what is known as an alias for `/home/<user>`, which means, anytime you type `~`, the shell will replace the alias `~` with `/home/<user>` when executing commands on the back-end.
 
 
-### Navigating the Terminal
+## Navigating the Terminal
 In the terminal, it may be hard to know where you are and what directories you can work with. To view all of the files (directories included) in the current working directory we can use ✨`ls`, which is short for "list". (our home directories will not look the same)
 ```
 joe@v5:~$ ls
@@ -261,7 +260,7 @@ $ pwd
 ```
 
 
-### File Paths
+## File Paths
 Once we change the directory, the current working directory (cwd), shown by `pwd`, changes aswell. 🔴The cwd has a default alias just like the home directory, where `.` is to the cwd as `~` is to the home diretory.
 
 We can test and verify this alias in any directory by checking the difference in `ls`.
@@ -325,7 +324,7 @@ $ pwd
 As you can see, both absolute and relative file paths can be used to get where you want. However, you need to know your cwd to use relative file paths, while absolute file paths can be used agnostic of your current location.
 
 
-### Manipulating Files
+## Manipulating Files
 Now that we understand file paths, lets go back to `terminal-tutorial` and manipulate some files.
 ```
 $ cd /home/<user>/projects/terminal-tutorial
@@ -365,7 +364,7 @@ Where `man` is short for "manual" and is usually the most verbose and nicest to 
 
 The reason the `--help` option is so ubiquitous is because the commands `man`, `help`, and `info` are built in commands that are only compatable with default commands and not even all default commands. When a developer or team of developers is making a command, they always include `--help` as an option for the command because they want other people to be able to use that command.
 
-#### File Outputs
+## File Outputs
 Now that we understand each number from `wc`, let's change them. We will start by opening `example.txt` and entering in the following text (if you do not know how to use a text editor in the terminal, check out this [vim tutorial](https://github.com/jspecht3/vim-tutorial/blob/main/README.md)).
 ```
 This is the first line
@@ -463,9 +462,9 @@ $ cat example.txt | head -2 | tail -1
 and this is the second.
 ```
 
-Whew... that was pretty dense, but now, you have the requisite knowledge to investigate the basics of files.
+This section may have been pretty dense, but now, you have the requisite knowledge to investigate the basics of files.
 
-#### Moving, Renaming, and Deleting Files
+## Moving, Renaming, and Deleting Files
 Next, we will learn how to move, rename, and remove files.
 
 First, let's create a text file called `this-is-a-really-long-file-name.txt` in the home directory by speficying the file path where we want the file to be created.
@@ -531,7 +530,7 @@ With `rm`, we remove the file or files that are specified. If you want to remove
 
 Now, there is only a single `shorter-name.txt` in `new-dir`. It is very important to note that `rm` is permenant, so, unless you have it backed up with some sort of version control, any file removed with `rm` is gone forever.
 
-#### for Loops
+## for Loops
 Now that the old `shorter-name.txt` is gone, let's go into `new-dir` and copy `shorter-name.txt` a few times. We can use a 🔴 `for` loop and a command called ✨ `seq` to copy `shorter-name.txt` easily. `seq` is short for sequence and generates a series of number from the first argument to the second argument.
 ```
 $ for copy_number in $(seq 1 10)
@@ -569,7 +568,7 @@ $ echo $HOME
 We can see that with `$`, we are able to access the value of the predefined variable `HOME`. Without `$`, the shell has no way of knowing if we want to use a variable or the value stored in that variable.
 
 
-#### Regular Expressions
+## Regular Expressions
 Now that we have created the copies of `shorter-name.txt`, let's remove them all. It would be rather tedious to type `rm copy1.txt copy2.txt ...`, so instead we will use a 🔴 regular expression, `*`.
 
 Regular expressions, also known as wildcards, take the place of any filename in the current directory. Next, let's look at the output of `echo *`.
@@ -616,7 +615,7 @@ shorter-name.txt
 
 With this, we have removed all the copies and only have `shorter-name.txt` left.
 
-#### History
+## History
 The last concept I would consider a "beginner concept" is the command history. The command history is exactly as it sounds and can be viewed with :sparkles: `history`.
 ```
 $ history | tail -5
