@@ -17,14 +17,36 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 
 
 # Lists of Commands and Aliases
-Here, you can find a list of terminal commands and a basic description. You can almost always do `<command> --help` in the terminal for more information.
+Here, you can find a list of terminal commands and a basic description in order of when they were used in the tutorial. You can almost always do `<command> --help` in the terminal for more information.
 
 | Command | Meaning                 | Description                                                                                    |
 | ------- | ----------------------- | ---------------------------------------------------------------------------------------------- |
 | pwd     | print working directory | prints the directory you are currently located, any command will be executed in this directory |
-| cd      | change directory        | changes the current directory                                                                  |
-| mkdir   | make directory          | creates a directory with the given name                                                        |
 | ls      | list                    | lists the files in the current directory                                                       |
+| mkdir   | make directory          | creates a directory with the given name                                                        |
+| cd      | change directory        | changes the current directory                                                                  |
+| touch | interacts with a given file | most often, creates a new file with the given name, but can also update the timestamps of an existing file |
+| wc | word count | displays the newline, word, and byte counts for the specified file |
+| --help | option that helps the user | used after a command and gives documentation on how to use the given command |
+| man | manual | gives the manual entry for a given command. man is usually the best "help-style" command |
+| help | help | displays help for a given command |
+| info | information | displays information for a given command |
+| cp | copy | creates a copy of the first argument with the name given in the second argument |
+| diff | difference | displays the difference between two files |
+| >> | output redirect | directs the output of a file from the standard output into another location. >> concatenate to the end of existing text |
+| > | output redirect | directs the output of a file from the standard output into another location. > overwrites the existing text |
+| cat | concatenate | concatenates all the text in a file into the terminal display |
+| head | beginning of a file | displays the first five lines of a file |
+| tail | end of a file | displays the last five lines of a file |
+| mv | move | moves a file from the first argument to the second argument |
+| tree | display file tree | displays the file tree of the current working directory |
+| rm | remove | removes the specified file |
+| seq | sequence | generates a sequence of numbers from the first argument to the second argument |
+| history | command history | displays the previously used commands |
+| clear | clear terminal display | clears the current terminal display. this does not remove any files |
+| ! | use any previous command | use in conjunction with history; re-runs a command given its number in history |
+| !! | use the previous command | re-run the most recently used command |
+
 
 Here, you can find a few aliases.
 
@@ -261,7 +283,7 @@ terminal-tutorial
 
 We created `terminal-tutorial` without even going into `projects`. We can do this because almost every command works with file paths (relative or absolute) as arguments, which will be discussed more shortly.
 
-To check the file paths, we will use `pwd`. We will also use ✨`cd`, which stands for "change directory."
+To check the file paths, we will use `pwd`. We will also use ✨ `cd`, which stands for "change directory."
 ```
 $ pwd
 /home/joe
@@ -272,7 +294,7 @@ $ pwd
 
 
 ## File Paths
-Once we change the directory, the current working directory (cwd), shown by `pwd`, changes aswell. 🔴The cwd has a default alias just like the home directory, where `.` is to the cwd as `~` is to the home diretory.
+Once we change the directory, the current working directory (cwd), shown by `pwd`, changes aswell. 🔴 The cwd has a default alias just like the home directory, where `.` is to the cwd as `~` is to the home diretory.
 
 We can test and verify this alias in any directory by checking the difference in `ls`.
 ```
