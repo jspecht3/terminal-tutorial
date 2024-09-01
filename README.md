@@ -14,6 +14,17 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 - [Nomenclature](#nomenclature)
 - [Opening the Terminal](#opening-the-terminal)
 - [Basics](#basics)
+  - [Opening the Terminal](#opening-the-terminal)
+  - [Overview](#overview)
+  - [Home Directory](#home-directory)
+  - [Navigating the Terminal](#navigating-the-terminal)
+  - [File Paths](#file-paths)
+  - [Manipulating Files](#manipulating-files)
+  - [File Outputs](#file-outputs)
+  - [Moving, Renaming, and Deleting Files](#moving-renaming-and-deleting-files)
+  - [for Loops](#for-loops)
+  - [Regular Expressions](#regular-expressions)
+  - [Command History](#command-history)
 
 
 # Lists of Commands and Aliases
