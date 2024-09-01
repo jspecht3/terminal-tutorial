@@ -136,6 +136,17 @@ Both `for` loops do the same thing, but the sub-shell method is markedly easier.
 # Basics
 Here you can find the basics you need to competently operate in the terminal. If you think you already know a section, you may still find use in looking through it as I have dispersed new commands organically throughout, so they may appear in unexpected places.
 
+- [Opening the Terminal](#opening-the-terminal)
+- [Overview](#overview)
+- [Home Directory](#home-directory)
+- [Navigating the Terminal](#navigating-the-terminal)
+- [File Paths](#file-paths)
+- [Manipulating Files](#manipulating-files)
+- [File Outputs](#file-outputs)
+- [Moving, Renaming, and Deleting Files](#moving-renaming-and-deleting-files)
+- [for Loops](#for-loops)
+- [Regular Expressions](#regular-expressions)
+- [Command History](#command-history)
 
 ## Opening the Terminal
 Opening the terminal is different on each operating system. Navigate to your platform below:
@@ -615,7 +626,7 @@ shorter-name.txt
 
 With this, we have removed all the copies and only have `shorter-name.txt` left.
 
-## History
+## Command History
 The last concept I would consider a "beginner concept" is the command history. The command history is exactly as it sounds and can be viewed with :sparkles: `history`.
 ```
 $ history | tail -5
