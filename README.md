@@ -451,7 +451,7 @@ $ cat example.txt | head -1
 This is the first line
 ```
 
-Combination of `cat` and `tail`. Ditto from `head`, but from the end of `example.txt`.
+Combination of `cat` and `tail`. Ditto as `head`, but from the end of `example.txt`.
 ```
 $ cat example.txt | tail -1
 The above line is empty.
@@ -555,7 +555,7 @@ We'll start with the first line of the loop. We will break the first line, `for 
 - `in` seperates the index from the value of each index.
 - `$(seq 1 10)` are the values the index will take on. Here, `seq 1 10` generates a sequence of numbers from 1 to 10. We use `$` to tell the shell that we want each of the outputs from `seq 1 10` to be used as an individual index.
 
-In this example, we used 🔴 `$`. The `$` uses the value of a variable or command we previously defined. In this case, 
+In this example, we used 🔴 `$`. The `$` uses the value of a variable or command we previously defined. In this case, we used `$(seq 1 10)` to generate a list of integers from \[1, 10\],
 
 
 Next, let's try to remove the directory `new-dir` and see what happens.
