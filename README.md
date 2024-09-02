@@ -12,7 +12,7 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 - [List of Commands and Aliases](#list-of-commands-and-aliases)
 - [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
-  - [#](#)
+  - [Pound Sign](#pound-sign)
   - [\<some-text\>](#some-text)
   - [/path/to/folder/](#pathtofolder)
   - [\$](#-)
@@ -102,13 +102,13 @@ When following tutorials and guides, you may run into unknown nomenclature. For 
 
 If there is confusing nomenclature used (in this tutorial or not), please open an issue asking for clarification, make a pull request adding the clarification, or [email](jspecht3@illinois.edu) me, so it can added for posterity.
 
-- [#](#)
+- [Pound Sign](#pound-sign)
 - [\<some-text\>](#some-text)
 - [/path/to/folder/](#pathtofolder)
 - [\$](#-)
 - [Command line < or <<<](#command-line--or)
 
-## \#
+## Pound Sign
 A `#` tells you where a comment begins. You can either have comments that take up a whole line or are inline.
 
 For example, if there are two ways to do something, I might let the user know about each of those methods
