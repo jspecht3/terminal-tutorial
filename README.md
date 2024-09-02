@@ -716,6 +716,12 @@ $ !!
 Finally, you can access the `history` by also using 🔴 the arrow keys. Hitting the up arrow pastes the previously used command into the terminal input; you can also keep hitting the up arrrow to go further into the command history. Similarly, you can paste a more recently used command by pressing the down arrow, but this only works if you have already pressed the up arrow however many times.
 
 # Advanced Topics
+WIP
+
+- [Hidden Files](#hidden-files)
+- [Bash Scripts](#bash-scripts)
+- [Shell Files](#shell-files)
+
 ## Hidden Files
 ## Bash scripts
 ## Shell Files
