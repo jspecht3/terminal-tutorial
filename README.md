@@ -9,6 +9,7 @@ If you are a complete beginner, you should start at the [Introduction](#introduc
 
 The first time a command is used in the tutorial, a ✨ will be placed in front of that command. Important concepts will be marked with a 🔴.
 
+Overview of the topics Covered:
 - [List of Commands and Aliases](#list-of-commands-and-aliases)
 - [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
@@ -29,6 +30,10 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
   - [for Loops](#for-loops)
   - [Regular Expressions](#regular-expressions)
   - [Command History](#command-history)
+- [Advanced Topics](#advanced-topics)
+  - [Hidden Files](#hidden-files)
+  - [Bash Scripts](#bash-scripts)
+  - [Shell Files](#shell-files)
 
 
 # Lists of Commands and Aliases
@@ -710,7 +715,7 @@ $ !!
 
 Finally, you can access the `history` by also using 🔴 the arrow keys. Hitting the up arrow pastes the previously used command into the terminal input; you can also keep hitting the up arrrow to go further into the command history. Similarly, you can paste a more recently used command by pressing the down arrow, but this only works if you have already pressed the up arrow however many times.
 
-
+# Advanced Topics
 ## Hidden Files
 ## Bash scripts
 ## Shell Files
