@@ -12,7 +12,11 @@ The first time a command is used in the tutorial, a ✨ will be placed in front 
 - [List of Commands and Aliases](#list-of-commands-and-aliases)
 - [Introduction](#introduction)
 - [Nomenclature](#nomenclature)
-- [Opening the Terminal](#opening-the-terminal)
+  - [#](#)
+  - [\<some-text\>](#some-text)
+  - [/path/to/folder/](#pathtofolder)
+  - [\$](#-)
+  - [Command line < or <<<](#command-line--or)
 - [Basics](#basics)
   - [Opening the Terminal](#opening-the-terminal)
   - [Overview](#overview)
@@ -231,12 +235,6 @@ First, you can clock the Launchpad icon in the Dock, type "Terminal", and click 
 
 Alternatively, in Finder, you can open the `/Applications/Utilities` directory, and double click Terminal.
 
-
-- [Overview](#overview)
-- [Home Directory](#home-directory)
-- [Navigating the Terminal](#navigating-the-terminal)
-- [File Paths](#file-paths)
-- [Manipulating Files](#manipulating-files)
 
 ## Overview
 Once you are successfully in the terminal, you should see something like this:
