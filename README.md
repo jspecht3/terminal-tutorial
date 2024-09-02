@@ -98,6 +98,11 @@ When following tutorials and guides, you may run into unknown nomenclature. For 
 
 If there is confusing nomenclature used (in this tutorial or not), please open an issue asking for clarification, make a pull request adding the clarification, or [email](jspecht3@illinois.edu) me, so it can added for posterity.
 
+- [#](#)
+- [<some-text>](#some-text)
+- [/path/to/folder/](#pathtofolder)
+- [$](#-)
+- [Command line < or <<<](#command-line--or)
 
 ## \#
 A `#` tells you where a comment begins. You can either have comments that take up a whole line or are inline.
