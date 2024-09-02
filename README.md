@@ -101,7 +101,7 @@ If there is confusing nomenclature used (in this tutorial or not), please open a
 - [#](#)
 - [<some-text>](#some-text)
 - [/path/to/folder/](#pathtofolder)
-- [$](#-)
+- [\$](#-)
 - [Command line < or <<<](#command-line--or)
 
 ## \#
