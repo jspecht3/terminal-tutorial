@@ -105,7 +105,7 @@ For most intents and purposes, the terminal and shell can be used interchangably
 # Nomenclature
 When following tutorials and guides, you may run into unknown nomenclature. For now, you can skip this section and reference back whenever some unknown nomenclature is used.
 
-If there is confusing nomenclature used (in this tutorial or not), please open an issue asking for clarification, make a pull request adding the clarification, or [email](jspecht3@illinois.edu) me, so it can added for posterity.
+If there is confusing nomenclature used (in this tutorial or not), please open an issue asking for clarification, make a pull request adding the clarification, or email (jspecht3@illinois.edu) me, so it can added for posterity.
 
 - [Pound Sign](#pound-sign)
 - [\<some-text\>](#some-text)
